@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 namespace ShapeAreaCalculation.Classes
 {
     /// <summary>
-    /// unwantable class, the class we test in last way.
+    /// unwantable class, the class we test in last way.and add shape implement
     /// </summary>
-    public class Square : Shape
+    class Square 
     {
         #region fields
 
