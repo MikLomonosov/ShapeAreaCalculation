@@ -14,6 +14,11 @@ namespace ShapeAreaCalculation.Classes
         private double _firstSide;
         private double _secondSide;
         private double _thirdSide;
+        private bool _isRight;
+
+        #endregion
+
+        #region constructor
 
         public Triangle(double firstSide, double secondSide, double thirdSide)
         {
@@ -23,6 +28,8 @@ namespace ShapeAreaCalculation.Classes
             _firstSide = firstSide;
             _secondSide = secondSide;
             _thirdSide = thirdSide;
+
+            Task rightTraingleTask = Task.Run(() => IsRightTriangle());
             SetPerimeter();
             SetArea();
         }
@@ -62,26 +69,43 @@ namespace ShapeAreaCalculation.Classes
             }
         }
 
+        public bool IsRight
+        {
+            get => _isRight;
+            set => _isRight = value;
+        }
+
+        #endregion
+
+        #region methods
+
         protected override void SetArea()
         {
             if (_firstSide != 0 && _secondSide != 0 && _thirdSide != 0)
             {
-                Area = AreaWithThreeSides();
+                Area = AreaWithThreeSides().Result;
                 return;
             }
         }
-        /// <summary>
-        /// I think we can do this method async =)
-        /// </summary>
-        /// <returns></returns>
-        private double AreaWithThreeSides()
+        
+        private  Task<double >AreaWithThreeSides()
         {
-            return Math.Sqrt(Perimeter/2 * (Perimeter/2 - _firstSide) * (Perimeter/2 - _secondSide) * (Perimeter/2 - _thirdSide));
+            return  Task.Run(() => Math.Sqrt(Perimeter/2 * (Perimeter/2 - _firstSide) * (Perimeter/2 - _secondSide) * (Perimeter/2 - _thirdSide)));
         }
-
+        
         protected override void SetPerimeter()
         {
             Perimeter = _firstSide + _secondSide + _thirdSide;
+        }
+
+        private void IsRightTriangle()
+        {
+            if (Math.Pow(_firstSide, 2) + Math.Pow(_secondSide, 2) == Math.Pow(_thirdSide, 2) ||
+                Math.Pow(_firstSide, 2) + Math.Pow(_thirdSide, 2) == Math.Pow(_secondSide, 2) ||
+                Math.Pow(_secondSide, 2) + Math.Pow(_thirdSide, 2) == Math.Pow(_firstSide, 2))
+            {
+                IsRight = true;
+            }
         }
 
         #endregion

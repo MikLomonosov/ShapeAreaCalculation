@@ -9,11 +9,11 @@ using System.Threading.Tasks;
 
 namespace ShapeAreaCalculation.Classes
 {
-    public class CalculateArea
+    public class GetShape
     {
         #region fields
 
-        Shape shape;
+        Shape? shape;
 
         #endregion
 
