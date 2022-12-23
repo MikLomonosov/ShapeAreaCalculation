@@ -14,6 +14,10 @@ namespace ShapeAreaCalculation.Classes
         private double _radius;
         private double _diameter;
 
+        #endregion
+
+        #region constructor
+
         public Circle(double radius)
         {
             _radius = radius;

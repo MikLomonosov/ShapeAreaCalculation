@@ -9,30 +9,28 @@ using System.Threading.Tasks;
 
 namespace ShapeAreaCalculation.Classes
 {
-    public class GetShape
+    public static class GetShape
     {
         #region fields
-
-        Shape? shape;
-
+        private static Shape? shape;
         #endregion
 
         #region methods
 
-        public Shape Shape(double radius)
+        public static Shape Unknown(double radius)
         {
             return Circle(radius);
         }
-        public Shape Shape(double firstSide, double secondSide, double thirdSide)
+        public static Shape Unknown(double firstSide, double secondSide, double thirdSide)
         {
             return Triangle(firstSide,secondSide,thirdSide);
         }
-        public Shape Circle(double radius)
+        public static Shape Circle(double radius)
         {
             shape = new Circle(radius);
             return shape;
         }
-        public Shape Triangle(double firstSide, double secondSide, double thirdSide)
+        public static Shape Triangle(double firstSide, double secondSide, double thirdSide)
         {
             shape = new Triangle(firstSide, secondSide, thirdSide);
             return shape;

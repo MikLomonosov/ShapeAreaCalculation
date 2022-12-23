@@ -14,7 +14,6 @@ namespace ShapeAreaCalculation.Classes
         private double _firstSide;
         private double _secondSide;
         private double _thirdSide;
-        private bool _isRight;
 
         #endregion
 
@@ -22,7 +21,7 @@ namespace ShapeAreaCalculation.Classes
 
         public Triangle(double firstSide, double secondSide, double thirdSide)
         {
-            if (!(firstSide <= secondSide + thirdSide && secondSide <= firstSide + thirdSide && thirdSide <= firstSide + secondSide))
+            if (!(firstSide <= secondSide + thirdSide & secondSide <= firstSide + thirdSide & thirdSide <= firstSide + secondSide))
                 throw new ArgumentException("The figure can't be Triangle!");
 
             _firstSide = firstSide;
@@ -69,12 +68,6 @@ namespace ShapeAreaCalculation.Classes
             }
         }
 
-        public bool IsRight
-        {
-            get => _isRight;
-            set => _isRight = value;
-        }
-
         #endregion
 
         #region methods
@@ -83,14 +76,14 @@ namespace ShapeAreaCalculation.Classes
         {
             if (_firstSide != 0 && _secondSide != 0 && _thirdSide != 0)
             {
-                Area = AreaWithThreeSides().Result;
+                Area = AreaWithThreeSides();
                 return;
             }
         }
         
-        private  Task<double >AreaWithThreeSides()
+        private double AreaWithThreeSides()
         {
-            return  Task.Run(() => Math.Sqrt(Perimeter/2 * (Perimeter/2 - _firstSide) * (Perimeter/2 - _secondSide) * (Perimeter/2 - _thirdSide)));
+            return Math.Sqrt(Perimeter/2 * (Perimeter/2 - _firstSide) * (Perimeter/2 - _secondSide) * (Perimeter/2 - _thirdSide));
         }
         
         protected override void SetPerimeter()
