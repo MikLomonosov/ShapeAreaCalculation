@@ -1,1 +1,3 @@
-Library calculates area of any shapes.
+Calculates shape of area library MUST BE, but now realised only:
+-Circle;
+-Traingle;
