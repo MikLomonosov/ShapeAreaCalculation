@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ShapeAreaCalculation.Classes
 {
-    public class Circle : Shape
+    class Circle : Shape
     {
 
         #region fields
@@ -16,18 +16,41 @@ namespace ShapeAreaCalculation.Classes
 
         #endregion
 
+        #region constructor
+
+        public Circle(double radius)
+        {
+            _radius = radius;
+            _diameter = radius * 2;
+
+            SetPerimeter();
+            SetArea();
+        }
+
+        #endregion
+
         #region properties
 
         public double Radius
         {
             get => _radius;
-            set => _radius = value;
+            set => _radius = value >= 0 ? value : -value;
         }
 
         public double Diameter
         {
             get => _diameter;
-            set => _diameter = value;
+            set => _diameter = value >= 0 ? value : -value;
+        }
+
+        protected override void SetArea()
+        {
+            Area = Math.PI * Math.Pow(_radius, 2);
+        }
+
+        protected override void SetPerimeter()
+        {
+            Perimeter = Math.PI * _radius * 2;
         }
 
         #endregion
