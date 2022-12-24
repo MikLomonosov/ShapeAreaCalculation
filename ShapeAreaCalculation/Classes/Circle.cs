@@ -45,7 +45,7 @@ namespace ShapeAreaCalculation.Classes
 
         protected override void SetArea()
         {
-            Area = Math.PI * Math.Pow(_radius, 2);
+            Area = Math.PI * (_radius * _radius);
         }
 
         protected override void SetPerimeter()

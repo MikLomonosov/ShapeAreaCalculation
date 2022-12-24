@@ -27,13 +27,15 @@ namespace ShapeAreaCalculation.Classes
         }
         public static Shape Circle(double radius)
         {
-            shape = new Circle(radius);
-            return shape;
+            return new Circle(radius);
         }
         public static Shape Triangle(double firstSide, double secondSide, double thirdSide)
         {
-            shape = new Triangle(firstSide, secondSide, thirdSide);
-            return shape;
+            return new Triangle(firstSide, secondSide, thirdSide);
+        }
+        public static Shape Rectangle(double firstSide, double secondSide = 0)
+        {
+            return new Rectangle(firstSide, secondSide);
         }
 
         #endregion
