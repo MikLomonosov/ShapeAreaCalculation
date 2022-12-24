@@ -93,9 +93,9 @@ namespace ShapeAreaCalculation.Classes
 
         private void IsRightTriangle()
         {
-            if (Math.Pow(_firstSide, 2) + Math.Pow(_secondSide, 2) == Math.Pow(_thirdSide, 2) ||
-                Math.Pow(_firstSide, 2) + Math.Pow(_thirdSide, 2) == Math.Pow(_secondSide, 2) ||
-                Math.Pow(_secondSide, 2) + Math.Pow(_thirdSide, 2) == Math.Pow(_firstSide, 2))
+            if ((_firstSide * _firstSide) + (_secondSide * _secondSide) == (_thirdSide * _thirdSide) ||
+                (_firstSide * _firstSide) + (_thirdSide * _thirdSide) == (_secondSide * _secondSide) ||
+                (_secondSide * _secondSide) + (_thirdSide * _thirdSide) == (_firstSide * _firstSide))
             {
                 IsRight = true;
             }
