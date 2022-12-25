@@ -11,10 +11,6 @@ namespace ShapeAreaCalculation.Classes
 {
     public static class GetShape
     {
-        #region fields
-        private static Shape? shape;
-        #endregion
-
         #region methods
 
         public static Shape Unknown(double radius)
