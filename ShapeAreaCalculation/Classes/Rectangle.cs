@@ -20,13 +20,13 @@ namespace ShapeAreaCalculation.Classes
         public double FirstSide
         {
             get => _firstSide;
-            set => _firstSide = value > 0 ? value : -value;
+            set => _firstSide = value >= 0 ? value : -value;
         }
 
         public double SecondSide
         {
             get => _secondSide;
-            set => _secondSide = value > 0 ? value : -value;
+            set => _secondSide = value >= 0 ? value : -value;
         }
 
         #endregion
@@ -38,14 +38,19 @@ namespace ShapeAreaCalculation.Classes
             _secondSide = secondSide;
 
             IsRightRectangle();
+            SetPerimeter();
+            SetArea();
         }
         #endregion
 
         protected override void SetArea()
         {
             if (IsRight)
-                Area = FirstSide * FirstSide;
-            Area = FirstSide * SecondSide;
+            {
+                Area = _firstSide * _firstSide;
+                return;
+            }
+            Area = _firstSide * _secondSide;
         }
 
         protected override void SetPerimeter() => Perimeter = (FirstSide + SecondSide) * 2;
@@ -53,7 +58,10 @@ namespace ShapeAreaCalculation.Classes
         private void IsRightRectangle()
         {
             if (_firstSide == _secondSide || _secondSide == 0)
+            {
                 IsRight = true;
+                return;
+            }
             IsRight = false;
         }
     }
