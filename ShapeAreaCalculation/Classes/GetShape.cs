@@ -16,7 +16,12 @@ namespace ShapeAreaCalculation.Classes
         #endregion
 
         #region methods
-
+       /// <summary>
+       /// here I wanna add commonly formula to caculate shape area
+       /// </summary>
+       /// <param name="radius"></param>
+       /// <returns></returns>
+       
         public static Shape Unknown(double radius)
         {
             return Circle(radius);

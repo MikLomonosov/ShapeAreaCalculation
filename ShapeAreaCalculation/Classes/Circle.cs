@@ -23,8 +23,8 @@ namespace ShapeAreaCalculation.Classes
             _radius = radius;
             _diameter = radius * 2;
 
-            SetPerimeter();
-            SetArea();
+            CalculatePerimeter();
+            CalculateArea();
         }
 
         #endregion
@@ -43,15 +43,16 @@ namespace ShapeAreaCalculation.Classes
             set => _diameter = value >= 0 ? value : -value;
         }
 
+<<<<<<< Updated upstream
         protected override void SetArea()
         {
             Area = Math.PI * Math.Pow(_radius, 2);
         }
+=======
+        public override void CalculateArea() => Area = Math.PI * (_radius * _radius);
+>>>>>>> Stashed changes
 
-        protected override void SetPerimeter()
-        {
-            Perimeter = Math.PI * _radius * 2;
-        }
+        public override void CalculatePerimeter() => Perimeter = Math.PI * _radius * 2;
 
         #endregion
 

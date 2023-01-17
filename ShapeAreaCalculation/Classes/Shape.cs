@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ShapeAreaCalculation.Interfaces;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ShapeAreaCalculation.Classes
 {
-    public abstract class Shape
+    public abstract class Shape : ICalculatableArea, ICalculatablePerimeter
     {
         #region fields
         private double _area;
@@ -36,8 +37,9 @@ namespace ShapeAreaCalculation.Classes
 
         #region methods
 
-        protected abstract void SetPerimeter();
-        protected abstract void SetArea();
+        public abstract void CalculatePerimeter();
+
+        public abstract void CalculateArea();
 
         #endregion
     }
