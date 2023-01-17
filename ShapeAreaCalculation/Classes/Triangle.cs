@@ -29,8 +29,8 @@ namespace ShapeAreaCalculation.Classes
             _thirdSide = thirdSide;
 
             Task rightTraingleTask = Task.Run(() => IsRightTriangle());
-            SetPerimeter();
-            SetArea();
+            CalculatePerimeter();
+            CalculateArea();
         }
 
         #endregion
@@ -72,7 +72,7 @@ namespace ShapeAreaCalculation.Classes
 
         #region methods
 
-        protected override void SetArea()
+        public override void CalculateArea()
         {
             if (_firstSide != 0 && _secondSide != 0 && _thirdSide != 0)
             {
@@ -81,15 +81,9 @@ namespace ShapeAreaCalculation.Classes
             }
         }
         
-        private double AreaWithThreeSides()
-        {
-            return Math.Sqrt(Perimeter/2 * (Perimeter/2 - _firstSide) * (Perimeter/2 - _secondSide) * (Perimeter/2 - _thirdSide));
-        }
+        private double AreaWithThreeSides() => Math.Sqrt(Perimeter / 2 * (Perimeter / 2 - _firstSide) * (Perimeter / 2 - _secondSide) * (Perimeter / 2 - _thirdSide));
         
-        protected override void SetPerimeter()
-        {
-            Perimeter = _firstSide + _secondSide + _thirdSide;
-        }
+        public override void CalculatePerimeter() => Perimeter = _firstSide + _secondSide + _thirdSide;
 
         private void IsRightTriangle()
         {

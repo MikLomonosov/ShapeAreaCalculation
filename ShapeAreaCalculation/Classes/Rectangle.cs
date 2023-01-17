@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -38,22 +38,23 @@ namespace ShapeAreaCalculation.Classes
             _secondSide = secondSide;
 
             IsRightRectangle();
-            SetPerimeter();
-            SetArea();
+
+            CalculatePerimeter();
+            CalculateArea();
         }
         #endregion
 
-        protected override void SetArea()
+        public override void CalculateArea()
         {
-            if (IsRight)
+            if ((bool)IsRight)
             {
-                Area = _firstSide * _firstSide;
-                return;
+                SetPerimeter();
+                SetArea();
             }
-            Area = _firstSide * _secondSide;
         }
-
-        protected override void SetPerimeter() => Perimeter = (FirstSide + SecondSide) * 2;
+        #endregion
+        
+        public override void CalculatePerimeter() => Perimeter = (FirstSide + SecondSide) * 2;
 
         private void IsRightRectangle()
         {
