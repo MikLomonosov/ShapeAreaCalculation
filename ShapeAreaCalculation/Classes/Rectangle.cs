@@ -44,15 +44,11 @@ namespace ShapeAreaCalculation.Classes
         }
         #endregion
 
+        #region methods
         public override void CalculateArea()
         {
-            if ((bool)IsRight)
-            {
-                SetPerimeter();
-                SetArea();
-            }
+            Area = _firstSide * _secondSide;
         }
-        #endregion
         
         public override void CalculatePerimeter() => Perimeter = (FirstSide + SecondSide) * 2;
 
@@ -65,5 +61,6 @@ namespace ShapeAreaCalculation.Classes
             }
             IsRight = false;
         }
+        #endregion
     }
 }
