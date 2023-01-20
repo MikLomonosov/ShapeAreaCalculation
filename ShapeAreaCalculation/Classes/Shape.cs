@@ -13,7 +13,7 @@ namespace ShapeAreaCalculation.Classes
         #region fields
         private double _area;
         private double _perimeter;
-        private bool? _isRight;
+        private bool _isRight;
         #endregion
 
         #region properties
@@ -27,7 +27,7 @@ namespace ShapeAreaCalculation.Classes
             get => _perimeter;
             set => _perimeter = value >= 0 ? value : -value;
         }
-        public bool? IsRight
+        public bool IsRight
         {
             get => _isRight;
             set => _isRight = value;
