@@ -6,4 +6,9 @@
   <li><img height="10" src ="https://github.com/MikLomonosov/ShapeAreaCalculation/blob/master/ShapeAreaCalculation/Images/triangle.png" alt="triangle"/> Triangle</li>
 </ul>
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Libre+Baskerville&weight=100&size=30&duration=6000&color=A7BB3F&width=435&height=150&lines=Welcome+to+my+profile;I'm+Davaev+Victor)](https://git.io/typing-svg)
+<p align="center">
+  <a href="https://git.io/typing-svg">
+    <img src="https://readme-typing-svg.demolab.com?            font=Libre+Baskerville&weight=100&size=30&duration=6000&color=A7BB3F&width=435&height=150&lines=Welcome+to+my+profile;I'm+Davaev+Victor" alt="Typing SVG" /> 
+  </a>
+</p>
+
