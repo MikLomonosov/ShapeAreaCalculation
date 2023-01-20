@@ -7,4 +7,4 @@
 </ul>
 
 
-https://github.com/MikLomonosov/TerminalStyle/blob/master/github_stats.svg
+<a src="https://github.com/MikLomonosov/TerminalStyle/blob/master/github_stats.svg"/>
