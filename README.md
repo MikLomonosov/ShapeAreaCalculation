@@ -5,6 +5,3 @@
   <li><img height="10" src ="https://github.com/MikLomonosov/ShapeAreaCalculation/blob/master/ShapeAreaCalculation/Images/square.png" alt="square"/> Rectangle</li>
   <li><img height="10" src ="https://github.com/MikLomonosov/ShapeAreaCalculation/blob/master/ShapeAreaCalculation/Images/triangle.png" alt="triangle"/> Triangle</li>
 </ul>
-
-
-<image src="https://github.com/MikLomonosov/TerminalStyle/blob/master/github_stats.svg"/>
