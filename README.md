@@ -7,4 +7,4 @@
 </ul>
 
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Unbounded +&weight=100&size=30&duration=4000&pause=999&color=157A1B&background=FF59EA00&width=435&lines=Hello+world!;I'm+Davaev+Victor" alt="Typing SVG" /></a>
+<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Unbounded +&weight=100&size=30&duration=4000&pause=999&color=157A1B&background=FF59EA00&width=435&lines=Hello+world!;I'm+Davaev+Victor" alt="Typing SVG" font="Libre Baskerville"/></a>
