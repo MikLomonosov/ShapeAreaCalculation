@@ -20,11 +20,11 @@ namespace ShapeAreaCalculation.Classes
 
         public Circle(double radius)
         {
-            _radius = radius;
-            _diameter = radius * 2;
+                _radius = radius;
+                _diameter = radius * 2;
 
-            CalculatePerimeter();
-            CalculateArea();
+                CalculatePerimeter();
+                CalculateArea();
         }
 
         #endregion
