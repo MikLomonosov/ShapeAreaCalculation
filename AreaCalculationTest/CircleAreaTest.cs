@@ -10,29 +10,59 @@ namespace AreaCalculationTest
     [TestClass]
     public class CircleAreaTest
     {
-
         [TestMethod]
-        public void CircleArea_PositiveRandomDoubleNumber_ReturnedCalculatedValue()
+        public void CircleArea_Zero_ReturnedZero()
         {
-            Random random = new Random();
-            double randomNumber = random.NextDouble();
-            Shape circle = GetShape.Circle(randomNumber);
+            double radius = 0;
+            Shape circle = GetShape.Circle(radius);
 
             double cricleArea = circle.Area;
 
-            Assert.AreEqual(Math.PI * (randomNumber * randomNumber), cricleArea);
+            Assert.AreEqual(Math.PI * (radius * radius), cricleArea);
         }
 
         [TestMethod]
-        public void CircleArea_NegativeRandomDoubleNumber_ReturnedCalculatedValue()
+        public void CircleArea_PositiveMinDoubleNumber_ReturnedCalculatedValue()
         {
-            Random random = new Random();
-            double randomNumber = -random.NextDouble();
-            Shape circle = GetShape.Circle(randomNumber);
+            double radius = 0.1;
+            Shape circle = GetShape.Circle(radius);
 
             double cricleArea = circle.Area;
 
-            Assert.AreEqual(Math.PI * (randomNumber * randomNumber), cricleArea);
+            Assert.AreEqual(Math.PI * (radius * radius), cricleArea);
+        }
+
+        [TestMethod]
+        public void CircleArea_PositiveMaxDoubleNumber_ReturnedCalculatedValue()
+        {
+            double radius = double.MaxValue;
+            Shape circle = GetShape.Circle(radius);
+
+            double cricleArea = circle.Area;
+
+            Assert.AreEqual(Math.PI * (radius * radius), cricleArea);
+        }
+
+        [TestMethod]
+        public void CircleArea_NegativeMaxDoubleNumber_ReturnedCalculatedValue()
+        {
+            double radius = -0.1;
+            Shape circle = GetShape.Circle(radius);
+
+            double cricleArea = circle.Area;
+
+            Assert.AreEqual(Math.PI * (radius * radius), cricleArea);
+        }
+
+        [TestMethod]
+        public void CircleArea_NegativeMinDoubleNumber_ReturnedCalculatedValue()
+        {
+            double radius = double.MinValue;
+            Shape circle = GetShape.Circle(radius);
+
+            double cricleArea = circle.Area;
+
+            Assert.AreEqual(Math.PI * (radius * radius), cricleArea);
         }
 
         [TestMethod]
@@ -57,24 +87,20 @@ namespace AreaCalculationTest
         [TestMethod]
         public void CircleArea_Int64_ReturnedCalculatedValue()
         {
-            Random random = new Random();
+            Int64 bigRadius = Int64.MaxValue;
 
-            Int64 randomNumber = random.NextInt64();
+            double longToDouble = bigRadius;
 
-            double firstNumber = randomNumber;
-            double secondNumber = randomNumber;
-
-            Shape circle = GetShape.Circle(randomNumber);
+            Shape circle = GetShape.Circle(bigRadius);
 
             var circleArea = circle.Area;
 
-            Assert.AreEqual(Math.PI * (firstNumber * secondNumber), circleArea);
+            Assert.AreEqual(Math.PI * (longToDouble * longToDouble), circleArea);
         }
 
         [TestMethod]
         public void CircleArea_Int32_ReturnedCalculatedValue()
         {
-
             Shape circle = GetShape.Circle(10);
 
             var circleArea = circle.Area;
